@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <form action="{{url_for('student_izmena', id = student.id)}}" method="POST">
+            <h3>Novi student</h3>
+            <div class="form-group">
+                <label for="exampleInputText1">Broj indeksa</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="broj_indeksa" value="{{student.broj_indeksa}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Ime</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="ime" value="{{student.ime}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Ime roditelja</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="ime_roditelja" value="{{student.ime_roditelja}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Prezime</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="prezime" value="{{student.prezime}}" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email adresa</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{student.email}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Broj telefona</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="broj_telefona" value="{{student.broj_telefona}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Godina studija</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="godina_studija" value="{{student.godina_studija}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputDate1">Datum rodjenja</label>
+                <input type="date" class="form-control" id="exampleInputDate1" name="datum_rodjenja" value="{{student.datum_rodjenja}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">JMBG</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="jmbg" value="{{student.jmbg}}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Izmeni</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

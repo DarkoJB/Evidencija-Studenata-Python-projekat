@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <form action="{{url_for('predmet_izmena', id = predmet.id)}}" method="POST">
+            <h3>Izmena predmeta</h3>
+            <div class="form-group">
+                <label for="exampleInputText1">Sifra predmeta</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="sifra" value = "{{predmet.sifra}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Naziv</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="naziv" value = "{{predmet.naziv}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Godina studija</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="godina_studija" value = "{{predmet.godina_studija}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">ESPB</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="espb" value = "{{predmet.espb}}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Obavezni / Izborni</label> <br>
+                <select name="obavezni_izborni" value = "{{predmet.obavezni_izborni}}">
+                    <option value = "obavezni">Obavezni</option>
+                    <option value = "izborni">Izborni</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

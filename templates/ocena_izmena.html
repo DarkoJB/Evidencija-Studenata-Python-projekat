@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <form action="{{url_for('ocena_izmena', id = id, ocena_id = data_ocena.id)}}" method="POST">
+            <h3>Ocena Izmena</h3>
+            <div class="form-group">
+                <label>Predmet</label>
+                <select name="predmet_id" id="predmet_id" class="form-control">
+                    <option>Odaberi</option>
+                    {% for predmet in predmeti %}
+                    <option value="{{predmet.id}}">{{ predmet.naziv }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Ocena</label>
+                <input type="text" name="ocena" id="exampleInputText1" class="form-control" value="{{data_ocena.ocena}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Datum</label>
+                <input type="text" name="datum" id="exampleInputText1" class="form-control" value="{{data_ocena.datum}}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Izmeni</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
